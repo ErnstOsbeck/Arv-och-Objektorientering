@@ -7,18 +7,23 @@ using uppgift;
 
 namespace uppgift
 {
-    class Triangle : Shape
+    class Triangle : IShape
     {
-        public Triangle(double w, double h) : base(w, h)
+        double width;
+        double height;
+        public Triangle(double w, double h)
         {
-            
+            width = w;
+
+            height = h;
         }
-        public override void Area()
+        public void Area()
         {
             double A = (width * height) / 2;
             Console.WriteLine("Arean är " + A);
         }
-        public override void Circumference()
+
+        public void Circumference()
         {
             double C = Math.Sqrt(width * width + height * height) + height + width;
             Console.WriteLine("Omkretsen är " + C);

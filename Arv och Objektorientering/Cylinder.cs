@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using uppgift;
 
 namespace uppgift
 {
-    internal class Rectangle : IShape
+    internal class Cylinder : IShape
     {
-        double width;
+        double diameter;
         double height;
-        public Rectangle(double w, double h)
+        public Cylinder(double d, double h)
         {
-            double width = w;
-
-            double height = h;
+            diameter = d;
+            height = h;
         }
         public void Area()
         {
-            double A = width * height;
+            double A = ((diameter/2)*(diameter/2)*Math.PI)*2 + (diameter*Math.PI)*height;
             Console.WriteLine("Arean är " + A);
         }
+
         public void Circumference()
         {
-            double C = width * 2 + height * 2;
+            double C = diameter * Math.PI;
             Console.WriteLine("Omkretsen är " + C);
         }
     }

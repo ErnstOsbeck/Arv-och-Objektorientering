@@ -3,28 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using uppgift;
 
 namespace uppgift
 {
-    internal class Rectangle : IShape
+    internal class Sphere : IShape
     {
-        double width;
-        double height;
-        public Rectangle(double w, double h)
+        double radius;
+        public Sphere(double r)
         {
-            double width = w;
-
-            double height = h;
+            radius = r;
         }
         public void Area()
         {
-            double A = width * height;
+            double A = 4*Math.PI*(radius*radius);
             Console.WriteLine("Arean är " + A);
         }
+
         public void Circumference()
         {
-            double C = width * 2 + height * 2;
+            double C = (radius*2) * Math.PI;
             Console.WriteLine("Omkretsen är " + C);
         }
     }
